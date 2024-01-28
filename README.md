@@ -1,3 +1,8 @@
-# AlgoCasts
+# Algorithm exercises.
 
-Companion repo to [The Coding Inteview Bootcamp: Algorithms + Data Structures](https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/)
+For those inside the exercises folder that have their test file, you can run it with:
+
+```
+ npx jest
+ npx jest fib/test.js --watch
+```
