@@ -11,6 +11,9 @@
 // class.  Contains should accept a 'data' argument
 // and return the Node in the tree with the same value.
 
+
+
+// using Node
 class Node {
   constructor(data){
     this.data = data;
@@ -43,6 +46,46 @@ class Node {
 
     return null
 
+  }
+
+}
+
+
+// using Tree
+
+class Tree {
+
+  constructor(){
+    this.root = null;
+  }
+
+  add(data){
+
+    if(this.root === null) {
+      this.root = new Node(data)
+    }else{
+      let current = this.root
+
+      while(true){
+        if(current.data > data){
+          if(current.left){
+            current = current.left
+          } else {
+            current.left = new Node(data)
+            break;
+          }
+        } else {
+          if(current.right){
+            current = current.right
+          } else {
+            current.right = new Node(data)
+            break;
+          }
+        }
+      }
+    }
+
+    return this
   }
 
 }
