@@ -19,7 +19,6 @@ function anagrams(stringA, stringB) {
   const parsedStringB = parseStringToCompare(stringB)
 
   const mapA = {}
-
   const mapB = {}
 
 
@@ -31,8 +30,8 @@ function anagrams(stringA, stringB) {
     const charA = parsedStringA[i]
     const charB = parsedStringB[i]
 
-    mapA[charA] = mapA[charA] ?  mapA[charA] + 1 : 1
-    mapB[charB] = mapB[charB] ?  mapB[charB] + 1 : 1
+    mapA[charA] = mapA[charA] ? mapA[charA] + 1 : 1
+    mapB[charB] = mapB[charB] ? mapB[charB] + 1 : 1
 
   }
 

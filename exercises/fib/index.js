@@ -15,11 +15,12 @@ const memoize = (fn) => {
   return (...args) => {
     if(cache[args]){
       return cache[args]
-    }{
+    }
+
       const result = fn(...args)
       cache[args] = result
       return result
-    }
+
   }
 
 }
