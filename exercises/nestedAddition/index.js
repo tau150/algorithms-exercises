@@ -19,8 +19,6 @@ function nestedAdd(arr){
 
   return counter
 
-
-
 }
 
 module.exports = nestedAdd
