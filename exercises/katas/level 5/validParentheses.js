@@ -17,12 +17,12 @@ function validParentheses(parens){
     if(parens[i] === ')'){
 
     if(stack.length === 0){
-        return false
+      return false
      }
 
      stack.pop()
     }
   }
-  return stack.length === 0
 
+  return stack.length === 0
 }
