@@ -11,7 +11,7 @@ function capitalize(str) {
 
   return str.split(" ").map( str => {
     const arrStr = str.split("")
-    arrStr[0] =  arrStr[0].toUpperCase()
+    arrStr[0] = arrStr[0].toUpperCase()
 
     return arrStr.join("")
   }).join(" ")
@@ -22,7 +22,7 @@ function capitalize(str) {
 // function capitalize(str) {
 //   return str.split(" ").map(word => {
 //     const firstLetter = word[0].toUpperCase()
-//     return  firstLetter + word.slice(1)
+//     return firstLetter + word.slice(1)
 //   }).join(" ")
 // }
 

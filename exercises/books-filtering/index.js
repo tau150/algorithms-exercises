@@ -1,6 +1,7 @@
-// Ejercicio 1: Remover Duplicados
-// Dado un array de estudiantes, donde cada estudiante es un objeto con una propiedad name y un array books que contiene los títulos de los libros que han reservado,
-// escribe una función para eliminar los estudiantes duplicados del array.
+
+// Exercise 1: Duplicate Remover
+//Given an array of students, where each student is an object with a name property and an array books containing the titles of the books they have reserved,
+//write a function to remove duplicate students from the array.
 
 
 const students = [
@@ -31,8 +32,14 @@ function removeDuplicates(students){
 }
 
 
-// Ejercicio 2: Remover Duplicados y acumular sus libros
+function removeDuplicates(students) {
+  return students.filter((student, index, self) => {
+    return self.findIndex(s => s.name === student.name) === index;
+  });
+}
 
+
+// Exercise 2: Remove Duplicates and accumulate your books
 const students2 = [
   { name: 'Alice', books: ['Book A', 'Book B'] },
   { name: 'Bob', books: ['Book C'] },
@@ -65,10 +72,8 @@ function removeDuplicatesWithBooksAcc(students){
 
 }
 
-
-// Ejercicio 3: Asignar libros a estudiantes
-
-// Dado un array de estudiantes y un array de libros, escribe una función que asigne los libros reservados a los objetos de libros correspondientes para cada estudiante.
+// Exercise 3: Assign books to students
+// Given an array of students and an array of books, write a function that maps the reserved books to the corresponding book objects for each student.
 
 const students3 = [
   { name: 'Alice', books: ['Book A', 'Book B'] },
@@ -84,7 +89,7 @@ const books = [
 ];
 
 
-//Respuesta esperada
+//expected response
 
 // [
 //   { name: 'Alice', books: [{ title: 'Book A', author: 'Author A' }, { title: 'Book B', author: 'Author B' }] },
@@ -109,8 +114,7 @@ function assignBooks(students, books){
 
 assignBooks(students, books)
 
-// Una solución más eficiente es crear un mapa de books al principio para no tener que hacer un find cada vez
-
+// A more efficient solution is to create a books map at the beginning so you don't have to do a find every time
 function assignBooks(students, books) {
   const bookMap = books.reduce((acc, book) => {
     acc[book.title] = book;
