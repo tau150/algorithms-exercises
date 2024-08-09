@@ -30,6 +30,25 @@
 // -10,000,000 <= target <= 10,000,000
 
 
+// Better solution, O(n)
+
+const twoSumB = (nums, target) => {
+  const map = {}
+
+  for(let [index, num] of nums.entries()){
+    const diff = target - num
+
+    if(map[diff]){
+      return [num, map[diff]]
+    }
+
+    map[num] = index
+  }
+};
+
+
+
+// This is not too efficient, is not a good solution O(n2)
 const twoSum = (nums, target) => {
   for(let i = 0; i < nums.length; i++){
     for(let j = i + 1; j < nums.length; j++){

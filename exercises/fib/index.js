@@ -17,7 +17,7 @@ const memoize = (fn) => {
       return cache[args]
     }
 
-      const result = fn(...args)
+    const result = fn(...args)
       cache[args] = result
       return result
 
@@ -32,7 +32,7 @@ function baseFib(n) {
   }
 
 
-  return fib(n - 2) + fib(n - 1)
+  return fib(n - 1) + fib(n - 2)
 }
 
 

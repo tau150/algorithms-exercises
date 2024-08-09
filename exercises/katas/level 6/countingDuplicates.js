@@ -27,3 +27,17 @@ function duplicateCount(text){
 
   return Object.values(map).filter(val => val > 1).length
 }
+
+
+// Alternative
+
+function duplicateCount(text){
+
+  const lowercaseText = text.toLowerCase()
+
+   const result = lowercaseText.split("").filter(le =>{
+    return lowercaseText.indexOf(le) !== lowercaseText.lastIndexOf(le)
+  })
+
+   return new Set(result).size
+}

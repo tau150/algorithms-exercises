@@ -38,18 +38,16 @@ const parseToCompare = (str) => {
   return str.toLowerCase().split("").sort().join('')
 }
 
-
 const groupAnagrams = (strs) => {
   const map = {};
 
-  for (let i = 0; i < strs.length; i++) {
-    const parsedStr = parseToCompare(strs[i]);
+  for(word of strs) {
+    const parsedStr = parseToCompare(word);
     if (!map[parsedStr]) {
       map[parsedStr] = [];
     }
-    map[parsedStr].push(strs[i]);
+    map[parsedStr].push(word);
   }
 
   return Object.values(map);
 }
-
